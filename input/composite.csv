@@ -1,0 +1,27 @@
+composite number
+q1,q2,q3,q4,q5s,q5x,q6,q7,qacc,arej
+1
+1,y,$,_
+q0
+qacc
+qrej
+q0,$,q1,$,R
+q1,1,q2,y,R
+q2,1,q3,x,R
+q3,1,q3,x,R
+q3,1,q4,1,L
+q4,x,q4,x,L
+q4,y,q5s,_,R
+q5s,y,q5s,y,R
+q5s,x,q5s,x,R
+q5s,_,qacc,_,L
+q5s,1,q6,y,L
+q6,y,q6,y,L
+q6,x,q6,x,L
+q6,_,q7,_,R
+q5x,x,q5x,x,R
+q5x,y,q5x,y,R
+q5x,1,q6,x,L
+q5x,_,qrej,_,L
+q7,x,q5x,_,R
+q7,y,q5s,_,R

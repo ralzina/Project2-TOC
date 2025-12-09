@@ -6,7 +6,7 @@ from src.ntm_tracer import NTM_Tracer
 
 def main():
     """
-    Entry point for the project1_toc package.
+    Entry point for the project2_toc package.
     """
     args = parse_inputs()
     temp_sim = TuringMachineSimulator(args.file)

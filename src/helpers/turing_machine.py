@@ -42,7 +42,7 @@ class TuringMachineSimulator:
                 self.sigma = lines[2]
                 self.gamma = lines[3]
                 self.start_state = lines[4][0]
-                self.accept_state = lines[5][0]
+                self.accept_states = lines[5]
                 self.reject_state = lines[6][0]
 
                 # --- Transition Parsing [cite: 207, 280] ---
@@ -101,30 +101,3 @@ class TuringMachineSimulator:
                 valid_trans.append(t)
         
         return valid_trans
-        
-        
-
-
-# ==========================================
-# MAIN EXECUTION
-# ==========================================
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="CSE 30151 Turing Machine Simulator")
-    parser.add_argument("file", help="Path to the .csv machine definition file")
-    parser.add_argument("input_string", help="The input string to process")
-    parser.add_argument("--max_depth", type=int, default=100, help="Max depth/steps (default 100)")
-    
-    args = parser.parse_args()
-
-    # Pre-load to check tape count and decide which Program to run
-    # (Or you can split this into two separate script files as per team preference)
-    temp_sim = TuringMachineSimulator(args.file)
-    
-    if temp_sim.num_tapes == 1:
-        # Assuming Program 1 (NTM) for single tape, though simple DTMs work here too [cite: 31]
-        ntm = NTM_Tracer(args.file)
-        ntm.run(args.input_string, args.max_depth)
-    else:
-        # Program 2 (k-tape) 
-        ktape = KTape_DTM(args.file)
-        ktape.run(args.input_string, args.max_depth)
