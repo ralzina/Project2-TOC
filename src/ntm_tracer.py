@@ -49,7 +49,7 @@ class NTM_Tracer(TuringMachineSimulator):
                 prev_state = config[2]
 
                 if config[2] in self.accept_states:
-                    print("ACCEPTED string: " + input_string + " after " + str(total_configs) + " transitions and depth " + str(depth) + ".")
+                    print("ACCEPTED string: " + input_string + " after " + str(total_configs) + " total transitions taken and " + str(depth) + " transitions in the accepting path.")
                     print("Level of nondeterminisim: " + f"{total_configs/considered_configs:.2f}")
                     self.print_trace_path(tree,config[2])
                     return
@@ -78,7 +78,7 @@ class NTM_Tracer(TuringMachineSimulator):
             # Placeholder for logic:
             if not next_level and all_rejected:
                 # TODO: Handle "String rejected" output [cite: 258]
-                print("REJECTED string: " + input_string + " after " + str(total_configs) + " transitions and depth " + str(depth) + ".")
+                print("REJECTED string: " + input_string + " after " + str(total_configs) + " total transitions taken and " + str(depth) + " transitions in the longest path.")
                 if total_configs > 0 and considered_configs > 0:
                     print("Level of nondeterminisim: " + f"{total_configs/considered_configs:.2f}")
                 self.print_trace_path(tree,current_level[0][2])
