@@ -11,7 +11,7 @@ q2,1,q3,x,R
 q3,1,q3,x,R
 q3,1,q4,1,L
 q4,x,q4,x,L
-q4,y,q5s,_,R
+q4,y,q5s,y,R
 q5s,y,q5s,y,R
 q5s,x,q5s,x,R
 q5s,_,qacc,_,L
